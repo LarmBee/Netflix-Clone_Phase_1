@@ -1,33 +1,61 @@
-const options = {
-    method: 'GET',
-    headers: {
-      'X-RapidAPI-Host': 'movie-database-alternative.p.rapidapi.com',
-      'X-RapidAPI-Key': 'ca64d2d9dfmsh6afc51225969620p1ee859jsn1d825a80fe88'
-    }
-  };
-  
-fetch('https://movie-database-alternative.p.rapidapi.com/?s=game%20of%20thrones&r=json&page=1', options)
-    .then(response => response.json())
-    .then(response => {
-      movies = response ;
-      let body = document.querySelector('body')
-      let movie_results =  movies.Search
-      let details = document.createElement('p')
-      for (movie in movie_results){
-        let img = document.createElement('img')
-        let first = movie_results[movie]
-        img.src = first.Poster
-        body.append(img)
-        img.classList.add('images')
-      }
-      
-    })
-    .catch(err => {});
 
-    //   for (movie in movie_results){
-    //     let movie_list = (movie_results[movie])
-    //     let movie_title= (movie_list.titleOriginal)
-    //     let movie_rating = (movie_list.rating)
-    //     let movie_release = (movie_list.release)
-    //     let movie_poster = (movie_list.image)
-    //     let movie_genres = (movie_list.genres)
+const mainURL = "https://api.themoviedb.org/3";
+let apiKey = 'api_key=d2bc8eb92eb2f9b904f9bf39c554df4b'
+searchTitle = " "
+const searchURL = `${mainURL}/search/movie?${apiKey}`;
+let search_movie = (`${searchURL}&query=${searchTitle}`);
+
+if (searchTitle === " "){
+    fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=d2bc8eb92eb2f9b904f9bf39c554df4b&language=en-US&page=1')
+        .then(response => response.json())
+        .then(response => {
+          data = response;
+          let overall_data = data.results
+          let img_url =  "https://image.tmdb.org/t/p/w500"
+          for (result of overall_data){
+            let section_1 = document.querySelector('.header')
+            let movie_titles = result.title
+            let movie_poster = result.backdrop_path
+            let movie_urls = img_url+movie_poster
+            let movie_description = result.overview
+            // section_1.innerHTML = `<img src = ${movie_urls} />`
+            section_1.insertAdjacentHTML('beforeend',
+            `
+            <div class = media>
+              <img src = ${movie_urls} /><h3 id ='titlelabel'>${movie_titles}</h3>\n\n\n<p id =mdes>${movie_description}</p>
+            </div>
+            `)
+          }
+        })
+}
+else
+{
+  fetch(search_movie)
+        .then(response => response.json())
+        .then(response => {
+          data = response;
+          let overall_data = data.results
+          let img_url =  "https://image.tmdb.org/t/p/w500"
+          for (result of overall_data){
+            let section_1 = document.querySelector('.header')
+            let movie_titles = result.title
+            let movie_poster = result.backdrop_path
+            let movie_urls = img_url+movie_poster
+            // section_1.innerHTML = `<img src = ${movie_urls} />`
+            section_1.insertAdjacentHTML('beforeend',
+            `
+            <div class = media>
+              <img src = ${movie_urls} />
+            </div>
+            `)
+          }
+        })
+}
+
+
+
+console.log(search_movie)
+     
+     
+
+  

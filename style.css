@@ -1,14 +1,29 @@
 body{
     background-color: black;
 }
-
+.header{
+    justify-content: center;
+}
+.logo{
+    height: 10vh;
+    width: 9vw;
+    padding-left: 2vw;
+}
+.title{
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: absolute;
+    top :20vh;
+    left:4vw;
+    font-size: 75px;
+}
 .logo{
     height: 10vh;
     width: 9vw;
     padding-left: 2vw;
 }
 
-.header{
+.topsection{
     background-image: url(./images/wallpaperflare.com_wallpaper.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -27,51 +42,62 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     border: none;
 }
-#trending{
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    padding-left: 2vh;
-}
-
-.images{
-    padding:4px;
-}
-.title{
-    position: absolute;
-    top: 20vh;
-    color: white;
-    padding-left: 3vw;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-.button{
-    position: absolute;
-    top :32vh;
-    left: 5vw;
-    height: 5vh;
-    width: 9vw;
-    background-color: transparent;
-    border-radius: 10%;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-
-}
-.button1{
-    position: absolute;
-    top: 32vh;
-    left: 16vw;
-    height: 5vh;
-    width: 9vw;
-    background-color: transparent;
-    border-radius: 10%;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-
-    
-
-}
 .description{
     position: absolute;
-    top: 37vh;
+    top: 47vh;
     padding-left: 3vw;
     color: white;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
 
+}
+
+.media{
+    display: flex;
+    flex-direction: row;
+    float: left;
+    text-align: end;
+    padding: 2vh;
+    height: 220px;
+    width: 90vw;
+    border-style: solid;
+    margin: 5px;
+    margin-left: 60px;
+
+}
+#titlelabel{
+    width:350px; 
+    height:100px; 
+    margin:5px;
+    color: red;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+#mdes{
+    width:300px; 
+    height:200px; 
+    border-style:solid; 
+    margin:5px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+.input{
+    position: absolute;
+    width: 50vw;
+    top: 74vh;
+    height: 5vh;
+    left: 10vw;
+}
+#submit{
+    position: absolute;
+    top: 74vh;
+    left: 62vw;
+    height: 6vh;
+    width: 5vw;
+}
+#titlelabel{
+    color: antiquewhite;
+}
+#mdes{
+    color: white;
 }

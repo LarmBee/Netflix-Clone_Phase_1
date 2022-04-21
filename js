@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
 </head>
+
 <body>
-    <div class = 'topsection'>
+    <header class = 'header'>
         <img src="./images/Netflix_logo_PNG1.png" class="logo">
         <button class="login">LOG IN</button>
         <h1 class="title">STAR WARS : THE LAST JEDI</h1>
-
+        <button class="button">PLAY</button>
+        <button class="button1">MY LIST</button>
         <p class="description">As multiple star systems get involved in the Clone Wars,the Jedi Knights <br>
              struggle to keep the peace and defeat the droid army of the Separatists. <br>
-             Meanwhile, an old threat slowly reveals its presence..
-        </p>
-        <input type="text" class="input"><button id="submit">Search</button>
-    </div>
+             Meanwhile, an old threat slowly reveals its presence..</p>
+    </header>
     <div class="header">
         <h1>hello world</h1>
     </div>
