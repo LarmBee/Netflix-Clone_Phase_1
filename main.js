@@ -3,7 +3,7 @@ const mainURL = "https://api.themoviedb.org/3";
 let apiKey = 'api_key=d2bc8eb92eb2f9b904f9bf39c554df4b'
 searchTitle = " "
 const searchURL = `${mainURL}/search/movie?${apiKey}`;
-let inputbox = document.querySelector('.input')
+let inputbox = document.querySelector('.input').value
 let search_movie = (`${searchURL}&query=${inputbox}`);
 if (inputbox = " "){
     fetch('https://api.themoviedb.org/3/movie/upcoming?api_key=d2bc8eb92eb2f9b904f9bf39c554df4b&language=en-US&page=1')
