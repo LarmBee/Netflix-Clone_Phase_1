@@ -3,10 +3,11 @@ const mainURL = "https://api.themoviedb.org/3";
 let apiKey = 'api_key=d2bc8eb92eb2f9b904f9bf39c554df4b'
 searchTitle = " "
 const searchURL = `${mainURL}/search/movie?${apiKey}`;
-let search_movie = (`${searchURL}&query=${searchTitle}`);
-
-if (searchTitle === " "){
-    fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=d2bc8eb92eb2f9b904f9bf39c554df4b&language=en-US&page=1')
+let inputbox = document.querySelector('.input')
+let search_movie = (`${searchURL}&query=${inputbox}`);
+if (inputbox = " "){
+    fetch('https://api.themoviedb.org/3/movie/upcoming?api_key=d2bc8eb92eb2f9b904f9bf39c554df4b&language=en-US&page=1')
+    
         .then(response => response.json())
         .then(response => {
           data = response;
@@ -22,7 +23,9 @@ if (searchTitle === " "){
             section_1.insertAdjacentHTML('beforeend',
             `
             <div class = media>
-              <img src = ${movie_urls} /><h3 id ='titlelabel'>${movie_titles}</h3>\n\n\n<p id =mdes>${movie_description}</p>
+              <img src = ${movie_urls} />
+              <h3 id ='titlelabel'>${movie_titles}</h3>
+              <p id =mdes>${movie_description}</p>
             </div>
             `)
           }
@@ -30,6 +33,7 @@ if (searchTitle === " "){
 }
 else
 {
+  alert('Enter movie name:')
   fetch(search_movie)
         .then(response => response.json())
         .then(response => {
@@ -55,7 +59,11 @@ else
 
 
 console.log(search_movie)
-     
-     
 
-  
+
+
+
+var handleSearch = function(event){
+  event.preventDefault
+  var searchterm = event.target.elements['input'].values
+}
